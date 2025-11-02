@@ -4,20 +4,19 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color scheme to match BIOSOLUCIONES LAB branding: blue, green, navy */
   --background: oklch(0.98 0 0);
   --foreground: oklch(0.1 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.1 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.1 0 0);
-  --primary: oklch(0.35 0.18 260); /* Deep blue - #1E5A8E */
+  --primary: oklch(0.35 0.18 260); 
   --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.65 0.2 130); /* Bright green - #7BC043 */
+  --secondary: oklch(0.65 0.2 130); 
   --secondary-foreground: oklch(0.98 0 0);
   --muted: oklch(0.93 0 0);
   --muted-foreground: oklch(0.55 0 0);
-  --accent: oklch(0.4 0.15 260); /* Navy accent */
+  --accent: oklch(0.4 0.15 260); 
   --accent-foreground: oklch(0.98 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);

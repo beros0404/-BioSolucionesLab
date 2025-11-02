@@ -2,71 +2,30 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { CheckCircle } from "lucide-react"
 
 const serviceSubServices = {
-  Diagnósticos: [
-    "Pruebas de esterilidad - Esterilidad en cultivos celulares",
-    "Pruebas de esterilidad - Esterilidad en productos biotecnológicos",
-    "Pruebas de esterilidad - Esterilidad en medios de cultivo y soluciones tampón",
-    "Detección de Mycoplasma por PCR",
-    "Identificación de microorganismos - Bacteriana por secuenciación 16S rRNA",
-    "Identificación de microorganismos - Fúngica por secuenciación ITS",
-    "Diagnóstico de arbovirosis - Dengue (DENV)",
-    "Diagnóstico de arbovirosis - Chikungunya (CHIKV)",
-    "Diagnóstico de arbovirosis - Zika (ZIKV)",
-    "Diagnóstico de arbovirosis - Panel combinado",
-    "Diagnóstico de patógenos porcinos - PRRS",
-    "Diagnóstico de patógenos porcinos - Circovirus Porcino Tipo 2",
-    "Diagnóstico de patógenos porcinos - Circovirus Porcino Tipo 3",
-    "Diagnóstico de patógenos porcinos - Parvovirus Porcino",
-    "Diagnóstico de patógenos porcinos - Pseudorabies Virus",
-    "Diagnóstico de patógenos porcinos - Swine Influenza Virus",
+  "Investigación Científica": [
+    "Diseño de cebadores y sondas",
+    "Asesoramiento en diseño experimental",
+    "Sanger",
+    "NGS",
+    "Análisis Bioinformático Avanzado",
+    "Servicios bajo demanda",
+    "Diagnóstico de arbovirosis",
   ],
-  "Diseño y Consultoría": [
-    "Diseño de cebadores y sondas - PCR convencional",
-    "Diseño de cebadores y sondas - PCR en tiempo real (qPCR)",
-    "Diseño de cebadores y sondas - Secuenciación Sanger",
-    "Diseño de cebadores y sondas - Amplificación de genes completos",
-    "Asesoramiento en diseño experimental - Planificación de experimentos",
-    "Asesoramiento en diseño experimental - Optimización de condiciones",
-    "Asesoramiento en diseño experimental - Validación de controles",
-    "Asesoramiento en diseño experimental - Sensibilidad y especificidad",
-    "Asesoramiento en diseño experimental - Expresión génica",
+  "Animales de Producción": [
+    "Diagnóstico de patógenos porcinos",
+    "Diagnóstico aviar",
+    "Diagnóstico molecular de endosimbiontes",
+    "Diagnóstico acuícola (Camarones)",
   ],
-  Secuenciación: [
-    "Secuenciación Sanger - Productos de PCR",
-    "Secuenciación Sanger - Plásmidos y vectores",
-    "Secuenciación Sanger - Mutaciones puntuales",
-    "Secuenciación Sanger - Inserciones y deleciones",
-    "Secuenciación Sanger - Clones bacterianos",
-    "Secuenciación NGS - Genomas completos",
-    "Secuenciación NGS - Transcriptomas (RNA-Seq)",
-    "Secuenciación NGS - Amplícones (16S/ITS)",
-    "Secuenciación NGS - Paneles personalizados",
-  ],
-  Bioinformática: [
-    "Evaluación bioinformática de cebadores - Alineamiento contra bases de datos",
-    "Evaluación bioinformática de cebadores - Amplificaciones cruzadas",
-    "Evaluación bioinformática de cebadores - Temperatura de fusión",
-    "Análisis de secuencias Sanger - Limpieza y ensamblaje",
-    "Análisis de secuencias Sanger - Comparación con bases de datos",
-    "Análisis de secuencias Sanger - Anotación y lineamiento",
-    "Análisis terciairo de datos NGS - SNPs e índeles",
-    "Análisis terciairo de datos NGS - Filogenia y relaciones evolutivas",
-    "Análisis terciairo de datos NGS - Reportes técnicos",
-    "Bioinformática aplicada a microbiomas - Identificación de taxones",
-    "Bioinformática aplicada a microbiomas - Diversidad alfa y beta",
-    "Bioinformática aplicada a microbiomas - Predicción funcional",
-  ],
-  "Servicios Especiales": [
-    "Servicios bajo demanda - Validación y estandarización de protocolos",
-    "Servicios bajo demanda - Capacitación en técnicas",
-    "Servicios bajo demanda - Desarrollo de kits diagnósticos",
-    "Servicios bajo demanda - Consultoría para NGS",
+  "Pruebas para la Industria": [
+    "Pruebas de esterilidad",
+    "Identificación de microorganismos",
   ],
 }
 
@@ -82,6 +41,39 @@ export default function QuoteForm() {
     message: "",
   })
   const [submitted, setSubmitted] = useState(false)
+
+  useEffect(() => {
+    const savedService = sessionStorage.getItem('quoteService')
+    const savedSubservice = sessionStorage.getItem('quoteSubservice')
+    
+    if (savedService && savedSubservice) {
+      setFormData(prev => ({
+        ...prev,
+        service: savedService,
+        subservice: savedSubservice
+      }))
+      
+      // Limpiar el sessionStorage después de leer
+      sessionStorage.removeItem('quoteService')
+      sessionStorage.removeItem('quoteSubservice')
+    }
+
+    // Escuchar eventos personalizados para actualizaciones en tiempo real
+    const handleQuoteRequest = (event: CustomEvent) => {
+      const { service, subservice } = event.detail
+      setFormData(prev => ({
+        ...prev,
+        service,
+        subservice
+      }))
+    }
+
+    window.addEventListener('quoteRequest', handleQuoteRequest as EventListener)
+    
+    return () => {
+      window.removeEventListener('quoteRequest', handleQuoteRequest as EventListener)
+    }
+  }, [])
 
   const availableSubservices = formData.service
     ? serviceSubServices[formData.service as keyof typeof serviceSubServices]
@@ -108,7 +100,7 @@ export default function QuoteForm() {
   }
 
   return (
-    <section id="contact" className="py-20 sm:py-28">
+    <section id="cotizacion" className="py-20 sm:py-28">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold sm:text-4xl mb-4">Solicitar Cotización</h2>
@@ -169,7 +161,7 @@ export default function QuoteForm() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="block text-sm font-medium">Servicio *</label>
+                    <label className="block text-sm font-medium">Línea de Servicio *</label>
                     <select
                       name="service"
                       value={formData.service}
@@ -177,7 +169,7 @@ export default function QuoteForm() {
                       required
                       className="w-full rounded-lg border border-input bg-background px-4 py-2 text-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-ring"
                     >
-                      <option value="">Selecciona un servicio</option>
+                      <option value="">Selecciona una línea de servicio</option>
                       {serviceOptions.map((option) => (
                         <option key={option} value={option}>
                           {option}
@@ -189,7 +181,7 @@ export default function QuoteForm() {
 
                 {formData.service && (
                   <div className="space-y-2">
-                    <label className="block text-sm font-medium">Subservicio *</label>
+                    <label className="block text-sm font-medium">Servicio Específico *</label>
                     <select
                       name="subservice"
                       value={formData.subservice}
@@ -197,7 +189,7 @@ export default function QuoteForm() {
                       required
                       className="w-full rounded-lg border border-input bg-background px-4 py-2 text-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-ring"
                     >
-                      <option value="">Selecciona un subservicio</option>
+                      <option value="">Selecciona un servicio específico</option>
                       {availableSubservices.map((subservice) => (
                         <option key={subservice} value={subservice}>
                           {subservice}
@@ -208,7 +200,7 @@ export default function QuoteForm() {
                 )}
 
                 <div className="space-y-2">
-                  <label className="block text-sm font-medium">Mensaje *</label>
+                  <label className="block text-sm font-medium">Detalles del Proyecto *</label>
                   <textarea
                     name="message"
                     value={formData.message}
@@ -216,7 +208,7 @@ export default function QuoteForm() {
                     required
                     rows={5}
                     className="w-full rounded-lg border border-input bg-background px-4 py-2 text-foreground placeholder-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-ring"
-                    placeholder="Cuéntanos sobre tu proyecto, muestras y requisitos específicos..."
+                    placeholder="Cuéntanos sobre tu proyecto, tipo de muestras, requisitos específicos y cualquier información relevante..."
                   />
                 </div>
 

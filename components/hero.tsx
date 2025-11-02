@@ -4,8 +4,22 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 
 export default function Hero() {
+  const handleQuoteClick = () => {
+    const quoteSection = document.getElementById('cotizacion')
+    if (quoteSection) {
+      quoteSection.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
+  const handleServicesClick = () => {
+    const servicesSection = document.getElementById('services')
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-primary/5 to-transparent py-20 sm:py-32">
+    <section id="inicio" className="relative overflow-hidden bg-gradient-to-b from-primary/5 to-transparent py-20 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <div className="mb-4 inline-block rounded-full bg-secondary/10 px-3 py-1">
@@ -23,11 +37,19 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col gap-4 justify-center sm:flex-row">
-            <Button size="lg" className="gap-2 bg-primary hover:bg-primary/90">
+            <Button 
+              size="lg" 
+              className="gap-2 bg-primary hover:bg-primary/90"
+              onClick={handleQuoteClick}
+            >
               Solicitar Cotización
               <ArrowRight className="h-4 w-4" />
             </Button>
-            <Button size="lg" variant="outline">
+            <Button 
+              size="lg" 
+              variant="outline"
+              onClick={handleServicesClick}
+            >
               Explorar Servicios
             </Button>
           </div>

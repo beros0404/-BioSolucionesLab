@@ -7,27 +7,27 @@ const values = [
   {
     icon: Microscope,
     title: "Precisión científica",
-    description: "Aplicamos protocolos rigurosos y métodos validados internacionalmente.",
+    description: "Aplicamos protocolos estrictos y metodologías validadas a nivel internacional, garantizando resultados confiables, reproducibles y alineados con los más altos estándares de calidad científica.",
   },
   {
     icon: Lightbulb,
     title: "Innovación constante",
-    description: "Incorporamos las últimas tecnologías en diagnóstico molecular y bioinformática.",
+    description: "Integración continua de las últimas tecnologías en diagnóstico molecular y herramientas de bioinformática, para mantenernos a la vanguardia en precisión, velocidad y profundidad analítica.",
   },
   {
     icon: Shield,
     title: "Compromiso ético",
-    description: "Garantizamos confidencialidad, integridad y transparencia.",
+    description: "Actuamos con confidencialidad, integridad y total transparencia, garantizando el respeto por la información, los procesos y las personas en cada etapa de nuestro trabajo.",
   },
   {
     icon: Zap,
     title: "Agilidad y cercanía",
-    description: "Nos adaptamos a tus necesidades y tiempos de entrega.",
+    description: "Nos adaptamos con flexibilidad a tus necesidades específicas y tiempos de entrega, manteniendo siempre una comunicación directa, ágil y efectiva.",
   },
   {
     icon: Users,
-    title: "Colaboración",
-    description: "Trabajamos como un aliado estratégico, no solo como un proveedor.",
+    title: "Colaboración estratégica",
+    description: "No actuamos solo como proveedores, sino como aliados estratégicos comprometidos con el éxito de cada proyecto. Aportamos valor desde la comprensión profunda de tus objetivos hasta la implementación efectiva de soluciones.",
   },
 ]
 

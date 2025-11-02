@@ -6,17 +6,21 @@ import About from "@/components/about"
 import Services from "@/components/services"
 import QuoteForm from "@/components/quote-form"
 import Footer from "@/components/footer"
+import Contact from "@/components/contact"
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background" id="inicio">
       <Header />
       <Hero />
+      <About />
       <Features />
+
       <Values />
       <Services />
-      <About />
+
       <QuoteForm />
+      <Contact />
       <Footer />
     </main>
   )

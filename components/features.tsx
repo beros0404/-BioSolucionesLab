@@ -6,27 +6,27 @@ import { CheckCircle2, Zap, Shield, BarChart3 } from "lucide-react"
 const features = [
   {
     icon: CheckCircle2,
-    title: "Precisión Excepcional",
+    title: "Servicio integral",
     description:
-      "Equipos de última generación y protocolos validados aseguran resultados fiables y precisos en todos tus diagnósticos moleculares.",
+      "Acompañamos todo el proceso: desde el diseño experimental hasta la interpretación final de resultados. Una solución completa, orientada a resultados reales y decisiones informadas.",
   },
   {
     icon: Zap,
-    title: "Entrega Rápida",
+    title: "Resultados rápidos y accionables",
     description:
-      "Procesamiento ágil sin comprometer la calidad. Obtén tus resultados rápidamente para acelerar tu investigación y toma de decisiones.",
+      "Entregamos reportes claros, precisos y listos para publicación o para una toma de decisiones oportuna y fundamentada.",
   },
   {
     icon: Shield,
-    title: "Confidencialidad Total",
+    title: "Experiencia que guía, juventud que impulsa",
     description:
-      "Manejo seguro de todas las muestras y datos con protocolos de confidencialidad estrictos que cumplen con estándares internacionales.",
+      "Combinamos la energía, creatividad y visión fresca de un equipo joven con la solidez, rigurosidad y eficacia de metodologías probadas. Esta sinergia nos permite innovar con propósito, ejecutar con precisión y adaptarnos con agilidad a los retos del entorno actual.",
   },
   {
     icon: BarChart3,
-    title: "Análisis Experto",
+    title: "Atención personalizada",
     description:
-      "Análisis bioinformático avanzado y consultoría de especialistas en biología molecular con amplia experiencia.",
+      "Tratamos cada proyecto como lo que es: único. Escuchamos, entendemos y adaptamos nuestras soluciones para responder con precisión a las necesidades específicas de cada cliente.",
   },
 ]
 
@@ -46,11 +46,11 @@ export default function Features() {
             const Icon = feature.icon
             return (
               <Card key={index} className="border border-border hover:border-secondary/50 transition-colors">
-                <CardHeader>
-                  <div className="mb-4 inline-flex rounded-lg bg-secondary/10 p-3">
+                <CardHeader className="flex flex-row items-start space-x-4 space-y-0">
+                  <div className="rounded-lg bg-secondary/10 p-3">
                     <Icon className="h-6 w-6 text-secondary" />
                   </div>
-                  <CardTitle className="text-lg">{feature.title}</CardTitle>
+                  <CardTitle className="text-lg mt-2">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">{feature.description}</p>
