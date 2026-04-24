@@ -54,52 +54,28 @@ function parseExtractedText(text: string): PDFReportData {
   const fechaRecepcionMatch = text.match(
     /Fecha\s+Recepci[óo]n[:\s]+(\d{1,2}[\/\-]\d{1,2}[\/\-]\d{4})/i
   );
-  const fechaRecepcion = fechaRecepcionMatch ? fechaRecepcionMatch[1] : "";
+  const fechaRecepcionValue = fechaRecepcionMatch ? fechaRecepcionMatch[1] : "";
 
   const fechaAnalisisMatch = text.match(
     /Fecha\s+(?:Emisi[óo]n|An[áa]lisis)[:\s]+(\d{1,2}[\/\-]\d{1,2}[\/\-]\d{4})/i
   );
-  const fechaAnalisis = fechaAnalisisMatch ? fechaAnalisisMatch[1] : "";
+  const fechaAnalisisValue = fechaAnalisisMatch ? fechaAnalisisMatch[1] : "";
 
   // Extraer subtipo de análisis (ej: "Mycoplasma gallisepticum", "APP", "APEC")
   const subtipoMatch = text.match(/Bio-(.+?)(?:\s*-\s*\d+\s*-|[\n\r])/);
-  const subtipoAnalisis = subtipoMatch ? subtipoMatch[1].trim() : "";
+  const subtipoAnalisisValue = subtipoMatch ? subtipoMatch[1].trim() : "";
 
   // Extraer tabla de resultados
-  const microorganismos = extractMicroorganismos(text);
+  const microorganismosArray = extractMicroorganismos(text);
 
-    // Extraer Código de Muestra - busca el patrón OA????
-    const codigoMatch = text.match(/OA\d{3}/);
-    const codigoMuestra = codigoMatch ? codigoMatch[0] : "";
-
-    // Extraer fechas
-    const fechaRecepcionMatch = text.match(
-      /Fecha\s+Recepci[óo]n[:\s]+(\d{1,2}[\/\-]\d{1,2}[\/\-]\d{4})/i
-    );
-    const fechaRecepcion = fechaRecepcionMatch ? fechaRecepcionMatch[1] : "";
-
-    const fechaAnalisisMatch = text.match(
-      /Fecha\s+(?:Emisi[óo]n|An[áa]lisis)[:\s]+(\d{1,2}[\/\-]\d{1,2}[\/\-]\d{4})/i
-    );
-    const fechaAnalisis = fechaAnalisisMatch ? fechaAnalisisMatch[1] : "";
-
-    // Extraer subtipo de análisis (ej: "Mycoplasma gallisepticum", "APP", "APEC")
-    const subtipoMatch = text.match(
-      /Bio-(.+?)(?:\s*-\s*\d+\s*-|[\n\r])/
-    );
-    const subtipoAnalisis = subtipoMatch ? subtipoMatch[1].trim() : "";
-
-    // Extraer tabla de resultados
-    const microorganismos = extractMicroorganismos(text);
-
-    return {
-      codigoMuestra,
-      laboratorio: "BioSoluciones Lab",
-      fechaRecepcion,
-      fechaAnalisis,
-      subtipoAnalisis,
-      microorganismos,
-    };
+  return {
+    codigoMuestra,
+    laboratorio: "BioSoluciones Lab",
+    fechaRecepcion: fechaRecepcionValue,
+    fechaAnalisis: fechaAnalisisValue,
+    subtipoAnalisis: subtipoAnalisisValue,
+    microorganismos: microorganismosArray,
+  };
 }
 
 function extractMicroorganismos(text: string): MicroorganismoResult[] {

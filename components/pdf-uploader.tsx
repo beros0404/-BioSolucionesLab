@@ -13,6 +13,7 @@ interface FilePreview {
 
 export function PDFUploader() {
   const [files, setFiles] = useState<FilePreview[]>([]);
+  const [fileObjects, setFileObjects] = useState<File[]>([]);
   const [isDragging, setIsDragging] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -58,47 +59,30 @@ export function PDFUploader() {
     }));
 
     setFiles((prev) => [...prev, ...newFiles]);
+    setFileObjects((prev) => [...prev, ...pdfFiles]);
   };
 
   const removeFile = (index: number) => {
     setFiles((prev) => prev.filter((_, i) => i !== index));
+    setFileObjects((prev) => prev.filter((_, i) => i !== index));
   };
 
   const handleProcessPDFs = async () => {
-    if (files.length === 0) return;
+    if (fileObjects.length === 0) return;
 
     setIsProcessing(true);
 
-    // Actualizar estado a processing
-    const fileInputElements = document.querySelectorAll(
-      "[data-file-index]"
-    ) as NodeListOf<HTMLDivElement>;
-    
     try {
+      // Actualizar estado a processing
+      setFiles((prev) =>
+        prev.map((f) => ({ ...f, status: "processing" }))
+      );
+
       const formData = new FormData();
 
       // Agregar cada archivo al formData
-      for (const filePreview of files) {
-        // Necesitamos acceder al File original - lo vamos a pasar como parte del flujo
-        const fileName = filePreview.name;
-        setFiles((prev) =>
-          prev.map((f) =>
-            f.name === fileName ? { ...f, status: "processing" } : f
-          )
-        );
-      }
-
-      // Obtener archivos del input - vamos a usar un enfoque diferente
-      const input = fileInputRef.current;
-      if (!input || !input.files) {
-        // Si no tenemos acceso a los archivos, recrear desde los nombres
-        alert("Error: No se pueden acceder a los archivos. Por favor, recarga la página.");
-        setIsProcessing(false);
-        return;
-      }
-
-      for (let i = 0; i < input.files.length; i++) {
-        formData.append("files", input.files[i]);
+      for (const file of fileObjects) {
+        formData.append("files", file);
       }
 
       const response = await fetch("/api/process-pdf", {
@@ -107,7 +91,8 @@ export function PDFUploader() {
       });
 
       if (!response.ok) {
-        throw new Error("Error al procesar PDFs");
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Error al procesar PDFs");
       }
 
       // Descargar el Excel
