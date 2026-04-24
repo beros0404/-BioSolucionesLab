@@ -1,7 +1,7 @@
 import { PDFReportData, ExcelRow, MicroorganismoResult } from "./types/pdf-data";
 
 // Diccionario de mapeo de nombres del PDF a nombres del Excel
-const nameMapping: { [key: string]: string } = {
+let nameMapping: { [key: string]: string } = {
   // Mycoplasma
   "Mycoplasma gallisepticum": "Mycoplasma gallisepticum",
   "Mycoplasma synoviae": "Mycoplasma synoviae",
@@ -19,6 +19,10 @@ const nameMapping: { [key: string]: string } = {
   Salmonella: "Salmonella",
   "E. coli": "E. coli",
 };
+
+export function setNameMapping(mapping: { [key: string]: string }) {
+  nameMapping = mapping;
+}
 
 export function mapMicroorganismoName(pdfName: string): string {
   // Buscar coincidencia exacta primero
@@ -53,7 +57,7 @@ export function mapPDFToExcelRows(pdfData: PDFReportData): ExcelRow[] {
       "Resultado": microorg.resultado,
       "CT": microorg.ct || "",
       "Cuantificación Bacteriana": microorg.copias || "",
-      "Unidad de Medida": microorg.unidadMedida,
+      "Unidad de Medida": "copias/μl",
     };
 
     rows.push(row);
