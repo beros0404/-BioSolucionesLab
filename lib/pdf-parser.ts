@@ -1,11 +1,11 @@
-import pdfParse from "pdf-parse";
+import * as pdfParse from "pdf-parse/node";
 import { PDFReportData, MicroorganismoResult } from "./types/pdf-data";
 
 export async function parsePDFFile(
   buffer: Buffer
 ): Promise<PDFReportData | null> {
   try {
-    const pdfData = await pdfParse(buffer);
+    const pdfData = await pdfParse.default(buffer);
     const text = pdfData.text;
 
     // Extraer Código de Muestra - busca el patrón OA????
