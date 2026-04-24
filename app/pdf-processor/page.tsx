@@ -1,4 +1,5 @@
 import { PDFUploader } from "@/components/pdf-uploader";
+import { LogoutButton } from "@/components/logout-button";
 
 export const metadata = {
   title: "Procesador de PDFs - BioSoluciones Lab",
@@ -7,9 +8,22 @@ export const metadata = {
 
 export default function PDFProcessorPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 py-12">
-      <div className="container mx-auto px-4">
-        <div className="mb-10">
+    <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
+      {/* Header */}
+      <header className="bg-white shadow">
+        <div className="container mx-auto px-4 py-6 flex justify-between items-center">
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900">BioSoluciones Lab</h2>
+            <p className="text-sm text-gray-600">Procesador de Reportes Administrativo</p>
+          </div>
+          <LogoutButton />
+        </div>
+      </header>
+
+      {/* Content */}
+      <div className="py-12">
+        <div className="container mx-auto px-4">
+          <div className="mb-10">
           <h1 className="text-4xl font-bold text-gray-900 mb-3 text-center">
             Procesador de Reportes PDF
           </h1>
@@ -48,6 +62,7 @@ export default function PDFProcessorPage() {
             </p>
           </div>
         </div>
+      </div>
       </div>
     </main>
   );
