@@ -1,39 +1,18 @@
 import { updateSession } from '@/lib/supabase/proxy'
 import { type NextRequest, NextResponse } from 'next/server'
-import { createServerClient } from '@supabase/ssr'
 
 export async function middleware(request: NextRequest) {
   let response = await updateSession(request)
 
-  // Proteger rutas admin
+  // Proteger rutas admin - redirigir a login si no hay sesión válida
   if (request.nextUrl.pathname.startsWith('/pdf-processor')) {
-    const supabase = createServerClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-      {
-        cookies: {
-          getAll() {
-            return request.cookies.getSetCookie().map((cookie) => {
-              const [name, ...rest] = cookie.split('=')
-              const value = rest.join('=')
-              return { name, value }
-            })
-          },
-          setAll(cookiesToSet) {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              response.cookies.set(name, value, options)
-            )
-          },
-        },
-      }
-    )
+    // Verificar si hay una sesión activa en las cookies
+    const hasSession = request.cookies.has('sb-auth-token') || 
+                      request.cookies.get('sb-refresh-token') ||
+                      request.cookies.get('sb-access-token')
 
-    const {
-      data: { user },
-    } = await supabase.auth.getUser()
-
-    // Si no hay usuario o no es admin, redirigir a login
-    if (!user || !user.user_metadata?.is_admin) {
+    // Si no hay sesión, redirigir a login
+    if (!hasSession) {
       return NextResponse.redirect(new URL('/auth/login', request.url))
     }
   }

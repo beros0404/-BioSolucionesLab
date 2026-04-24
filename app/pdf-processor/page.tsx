@@ -1,12 +1,24 @@
 import { PDFUploader } from "@/components/pdf-uploader";
 import { LogoutButton } from "@/components/logout-button";
+import { createClient } from "@/lib/supabase/server";
+import { redirect } from "next/navigation";
 
 export const metadata = {
   title: "Procesador de PDFs - BioSoluciones Lab",
   description: "Convierte reportes PDF a formato Excel con mapeo automático de datos",
 };
 
-export default function PDFProcessorPage() {
+export default async function PDFProcessorPage() {
+  // Validar autenticación del usuario
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  // Si no hay usuario o no es admin, redirigir a login
+  if (!user || !user.user_metadata?.is_admin) {
+    redirect("/auth/login");
+  }
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
       {/* Header */}
