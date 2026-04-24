@@ -1,10 +1,45 @@
 import { NextRequest, NextResponse } from "next/server";
+import { createServerClient } from "@supabase/ssr";
 import { parsePDFFile } from "@/lib/pdf-parser";
 import { mapPDFToExcelRows } from "@/lib/data-mapper";
 import { generateMultipleExcelBuffer } from "@/lib/excel-generator";
 
 export async function POST(request: NextRequest) {
   try {
+    // Verificar autenticación y permisos de admin
+    const supabase = createServerClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      {
+        cookies: {
+          getAll() {
+            return request.cookies.getSetCookie().map((cookie) => {
+              const [name, ...rest] = cookie.split("=");
+              const value = rest.join("=");
+              return { name, value };
+            });
+          },
+          setAll(cookiesToSet) {
+            cookiesToSet.forEach(({ name, value, options }) =>
+              request.cookies.set(name, value)
+            );
+          },
+        },
+      }
+    );
+
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    // Si no hay usuario o no es admin, rechazar
+    if (!user || !user.user_metadata?.is_admin) {
+      return NextResponse.json(
+        { error: "Unauthorized: Admin access required" },
+        { status: 403 }
+      );
+    }
+
     const formData = await request.formData();
     const files = formData.getAll("files") as File[];
 

@@ -75,6 +75,16 @@ export default function Header() {
             Solicitar Cotización
           </Button>
 
+          <Link href="/auth/login">
+            <Button 
+              className="hidden sm:inline-flex" 
+              variant="outline"
+              size="sm"
+            >
+              Admin
+            </Button>
+          </Link>
+
           <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="inline-flex md:hidden">
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -100,6 +110,15 @@ export default function Header() {
             >
               Solicitar Cotización
             </Button>
+            <Link href="/auth/login" className="w-full">
+              <Button 
+                className="mt-2 w-full" 
+                variant="outline"
+                size="sm"
+              >
+                Admin
+              </Button>
+            </Link>
           </div>
         </div>
       )}
