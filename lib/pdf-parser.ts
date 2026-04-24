@@ -1,12 +1,21 @@
-import * as pdfParse from "pdf-parse/node";
+import * as pdfjsLib from "pdfjs-dist";
 import { PDFReportData, MicroorganismoResult } from "./types/pdf-data";
 
 export async function parsePDFFile(
   buffer: Buffer
 ): Promise<PDFReportData | null> {
   try {
-    const pdfData = await pdfParse.default(buffer);
-    const text = pdfData.text;
+    const pdf = await pdfjsLib.getDocument(buffer).promise;
+    let text = "";
+
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const page = await pdf.getPage(i);
+      const textContent = await page.getTextContent();
+      const pageText = textContent.items
+        .map((item: any) => item.str)
+        .join(" ");
+      text += pageText + "\n";
+    }
 
     // Extraer Código de Muestra - busca el patrón OA????
     const codigoMatch = text.match(/OA\d{3}/);
