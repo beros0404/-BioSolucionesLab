@@ -1,0 +1,244 @@
+
+
+ 
+ 
+Código: F-03-BIO 
+Versión: 02 
+Vigencia: 2025 
+ANÁLISIS MOLECULAR – PCR EN TIEMPO REAL 
+Detección y cuantificación de Mycoplasma gallisepticum (cepa F vacunal y 
+cepas de campo) y Mycoplasma synoviae  
+Nº Informe 
+Bio-MYC-1-2026- 
+OAE081 
+Fecha Emisión de Informe 
+16/03/2026 
+Cliente 
+Alura  
+Fecha Recepción Muestra 
+13/03/2026 
+Tipo de Muestra 
+Hisopos traqueales 
+Procedencia 
+Egipto P1 – Caloto - Incubadora 
+Santander 
+Código de Orden 
+OAE081 
+Consultor 
+Andrea Ortiz 
+INDICACIÓN DE LA PRUEBA 
+PCR en tiempo real (qPCR) multiplex basado en sondas TaqMan® para la detección y cuantificación de Mycoplasma 
+gallisepticum (cepa  F  vacunal  y  cepas  de  campo, wt)  y Mycoplasma  synoviae aplicada  al  diagnóstico  molecular  y 
+vigilancia epidemiológica de patógenos aviares en sistemas de producción animal. 
+RESULTADOS 
+ 
+Código 
+muestra 
+Nombre muestra 
+M. gallisepticum wt M. gallisepticum cepa F  Mycoplasma synoviae  
+Copias/ reacciones Copias/ reacciones Copias/ reacciones 
+PAE257 CHY402 0 32.813 7.426.540 
+ 
+INTERPRETACIÓN 
+• En la muestra PAE257 no se detectó Mycoplasma gallisepticum cepa de campo (wt) pero se 
+detectó la cepa vacunal F. 
+• En la muestra se   detección   de Mycoplasma   synoviae con   alta   carga   molecular;   la 
+interpretación epidemiológica depende del estatus de vacunación de la granja. 
+• El control positivo presentó amplificación sigmoidal, validando el correcto desempeño del 
+ensayo. 
+• No se evidenció contaminación ni inhibición de la reacción de PCR. 
+• Todas  las  muestras  cumplen  con  los  parámetros  mínimos  de  calidad  establecidos  por  el 
+laboratorio. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+Código: F-03-BIO 
+Versión: 02 
+Vigencia: 2025 
+  INFORMACIÓN DE LAS MUESTRAS 
+ 
+N° Código 
+muestra 
+Nombre 
+muestra 
+Es 
+pool? 
+Tipo 
+muestra 
+Etapa Galpón Lote Sem. 
+etapa 
+Sexo Genética 
+1 PAE257 CHY402 Si 
+Hisopos 
+traqueales 
+Postura 6 PAE257 43  
+ 
+ 
+ 
+CURVA DE AMPLIFICACIÓN -PCR CUANTITATIVA  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figura 1. Curvas de amplificación de muestras y controles para Mycoplasma gallisepticum (cepa 
+F vacunal y cepas de campo-wt-) y Mycoplasma synoviae  
+ 
+ 
+PAE257 M. gallisepticum 
+total 
+ 
+PAE257 M. synoviae 
+PAE257 M. gallisepticum 
+cepa F 
+ 
+
+ 
+ 
+Código: F-03-BIO 
+Versión: 02 
+Vigencia: 2025 
+Nota técnica: El valor de Ct corresponde al ciclo donde la fluorescencia cruza el umbral (threshold). 
+Todos los controles positivos corresponden a 1. 000.000 copias por reacción. 
+ 
+GRÁFICOS DE BARRAS DEL MONITOREO MOLECULAR DE Mycoplasma gallisepticum (MG) y 
+Mycoplasma synoviae (MS) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CP M. gallisepticum 
+ 
+ 
+CP M. synoviae 
+ 
+CP M. gallisepticum 
+cepa F 
+ 
+Controles Negativo 
+
+ 
+ 
+Código: F-03-BIO 
+Versión: 02 
+Vigencia: 2025 
+ 
+MONITOREO SANITARIO 
+ 
+Nota: *La prueba molecular detecta Mycoplasma synoviae sin discriminar entre cepa vacunal y cepa de 
+campo (wt); por lo tanto, la interpretación epidemiológica depende del estatus de vacunación de la granja. 
+ 
+METODOLOGÍA Y ANÁLISIS 
+Extracción  de  ADN: El  ADN  se  extrajo  mediante  un  método  de  purificación  en  columnas  de  sílica 
+comerciales. La concentración y pureza del ADN se evaluaron por espectrofotometría (NanoDrop™) 
+utilizando las relaciones A260/A280 y A260/A230. 
+qPCR: La detección y cuantificación se realizó mediante PCR en tiempo real (qPCR) utilizando tres ensayos 
+independientes: (1) uno para Mycoplasma gallisepticum total, capaz de detectar cepas de campo (wt) y la 
+cepa vacunal F; (2) otro específico para Mycoplasma gallisepticum cepa F (vacunal); (3) y un tercero para 
+Mycoplasma synoviae, que detecta cepas de campo (wt) y vacunales. El cálculo de la cuantificación de copias 
+se describe a continuación. 
+cálculo de la cuantificación  
+Mycoplasma gallisepticum (cepa de campo – wt): La carga correspondiente a cepas de campo (wt) se 
+estimó mediante la siguiente fórmula: 
+• copias  MG  wt=  copias  totales  de Mycoplasma  gallisepticum (PCR1) - copias  de Mycoplasma 
+gallisepticum (cepa F) (PCR2) 
+ 
+• La  carga  de  cepa  F  corresponde  directamente  al  valor  obtenido  en  la  PCR  específica  para  cepa 
+F(PCR2). 
+ 
+Mycoplasma synoviae 
+ 
+• La  carga  de Mycoplasma  synoviae corresponde  al  número  de  copias  totales  detectadas  en  la  PCR 
+específica para M. synoviae, la cual detecta tanto cepas de campo como cepas vacunales. 
+ 
+Parámetros de Validación todos: 
+LoD: >10 copias/reacción 
+Coeficiente de determinación (R²): ≥ 0.96 -0.99 
+Eficiencia de PCR: 96- 99 % 
+ 
+ 
+ 
+ 
+ 
+MAPA DE RIESGO EPIDEMIOLÓGICO –   Mycoplasma gallisepticum (cepa F vacunal y cepas de 
+campo-wt-)  
+ESTADO SANITARIO: SIN DETECCIÓN DEL PATÓGENO 
+  
+ 
+ 
+Código muestra Interpretación sanitaria Acción 
+PAE257 Riesgo no evidenciado Vigilancia   
+
+ 
+ 
+Código: F-03-BIO 
+Versión: 02 
+Vigencia: 2025 
+VALIDACIÓN E INTERPRETACIÓN 
+ 
+Fecha de Validación: 16/03/2026 Hora de 
+Validación: 
+8:00  
+Procesado por: Ivan Camilo madera Miranda Validado por:  Enderson Murillo Ramos 
+ 
+ 
+ 
+ 
+ 
+_________________________________ 
+Ivan Camilo madera Miranda 
+Analista molecular 
+BIOSOLUCIONES LAB 
+ 
+ 
+ 
+ 
+_________________________________ 
+Enderson Murillo Ramos 
+Director científico 
+Registro Profesional: 1045500817 
+BIOSOLUCIONES LAB 
+ 
+Alcance y consentimiento 
+El presente informe corresponde a un estudio de investigación y evaluación técnica. Los resultados aquí consignados no constituyen diagnóstico 
+clínico, certificación sanitaria ni reporte oficial ante autoridades regulatorias, y su interpretación se limita exclusivamente a las muestras analizadas 
+bajo las condiciones metodológicas descritas. El cliente autoriza la realización de las pruebas moleculares y acepta el alcance del estudio, así como 
+el uso privado de la información contenida en este documento. 
+ 
+ 
+BIOSOLUCIONES LAB 
+Ciencia precisa para decisiones seguras 
+ CR 55 CALLE 64-73 LOCAL 233, Medellín - Colombia 
+ +57 312 280 7681 |  administracion@biosolucioneslabo.com 
+ https://biosolucioneslabo.com/ 
+ 
+ 

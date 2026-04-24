@@ -1,0 +1,84 @@
+{
+  "diccionario": [
+    {
+      "esperado": "PCR cuantitativa del Parvovirus Porcino",
+      "laboratorio": "PCR en tiempo real para detección y cuantificación del Parvovirus Porcino (PPV)"
+    },
+    {
+      "esperado": "PCR tiempo real detección y cuantificación de Vibrio parahaemolyticus",
+      "laboratorio": "Necrosis Hepatopancreática Aguda / Síndrome de Mortalidad Temprana (AHPND/EMS – Vibrio parahaemolyticus) – PCR Cuantitativa en tiempo real"
+    },
+    {
+      "esperado": "PCR cuantitativa Enterocytozoon hepatopenaei",
+      "laboratorio": "Hepatopancreatitis Microsporidial (EHP – Enterocytozoon hepatopenaei) – PCR Cuantitativa en tiempo real"
+    },
+    {
+      "esperado": "PCR toxinotipos C. perfringens",
+      "laboratorio": "PCR en tiempo real para detección simultánea de genes toxigénicos de Clostridium perfringens (panel de 6 genes)"
+    },
+    {
+      "esperado": "22 Factores E.coli APEC",
+      "laboratorio": "PCR convencional múltiplex para la detección y cribado de Escherichia coli aviar patógena (APEC) – Panel de 22 factores de virulencia"
+    },
+    {
+      "esperado": "PCR en tiempo real para detección de Influenza H1N1",
+      "laboratorio": "PCR en tiempo real para detección del Virus de la Influenza Porcina tipo A (subtipo H1N1)"
+    },
+    {
+      "esperado": "Detección y cuantificación de L.intracellularis, C.perfringens, Salmonella spp, B. hyodisenteriae y pilosicoli",
+      "laboratorio": "PCR en tiempo real para detección y cuantificación de Lawsonia intracellularis, Clostridium perfringens, Salmonella spp., Brachyspira hyodisenteriae y Bachyspira pilosicoli."
+    },
+    {
+      "esperado": "Detección serotipos de Salmonella spp",
+      "laboratorio": "Salmonella enterica – Serotipificación molecular por secuenciación Sanger"
+    },
+    {
+      "esperado": "PCR detección y cuantificación PRRSV",
+      "laboratorio": "PCR en tiempo real para detección y cuantificación del virus causante del Síndrome Reproductivo y Respiratorio Porcino (PRRSV)"
+    },
+    {
+      "esperado": "PCR cuantitativa del Síndrome de Taura (TSV)",
+      "laboratorio": "Virus del Síndrome de Taura (TSV) – PCR Cuantitativa en tiempo real"
+    },
+    {
+      "esperado": "PCR detección y cuantificación PCV-3",
+      "laboratorio": "PCR en tiempo real para detección y cuantificación del Circovirus Porcino Tipo 3 (PCV-3)"
+    },
+    {
+      "esperado": "PCR patotipos E.coli",
+      "laboratorio": "PCR en tiempo real para detección de patotipos de E. coli (EPEC, ETEC, STEC, EHEC, EHE CO157, EAEC y EIEC/Shigella)"
+    },
+    {
+      "esperado": "PCR detección y cuantificación PCV-2",
+      "laboratorio": "PCR en tiempo real para detección y cuantificación del Circovirus Porcino Tipo 2 (PCV-2)"
+    },
+    {
+      "esperado": "PCR cuantitativa Virus de la Necrosis Hipodérmica y Hematopoética",
+      "laboratorio": "Virus de la Necrosis Hipodérmica y Hematopoética Infecciosa (IHHNV) – PCR Cuantitativa en tiempo real"
+    },
+    {
+      "esperado": "PCR en tiempo real para detección y cuantificación de M. hyopneumoniae y M. hyorhinis",
+      "laboratorio": "PCR en tiempo real para detección y cuantificación de Mycoplasma hyopneumoniae y Mycoplasma hyorhinis"
+    },
+    {
+      "esperado": "PCR 9 serotipos de salmonella",
+      "laboratorio": "PCR para detección y serotipificación de Salmonella enterica (S. Gallinarum, S. Pullorum, S. Typhimurium (clásica y monofásica), S. Infantis, S. Heidelberg, S. Enteritidis, S. dublin y S. Choleraesuis)"
+    },
+    {
+      "esperado": "PCR tiempo real y cuantificación de virus de la mancha blanca",
+      "laboratorio": "Virus del Síndrome de la Mancha Blanca (WSSV) – PCR Cuantitativa en tiempo real"
+    },
+    {
+      "esperado": "PCR en tiempo real para detección y cuantificación de APP, S. suis, G. parasuis, P. multocida y Mycoplasma spp.",
+      "laboratorio": "PCR en tiempo real para detección y cuantificación de patógenos respiratorios porcinos (Actinobacillus pleuropneumoniae, Streptococcus suis, Glaesserella parasuis, Pasteurella multocida y Mycoplasma spp.)"
+    },
+    {
+      "esperado": "Diagnóstico y cuantificación de Mycoplasma gallisepticum y synoviae",
+      "laboratorio": "PCR en tiempo real para detección y cuantificación de Mycoplasma gallisepticum (cepa F vacunal y cepas de campo) y Mycoplasma synoviae (cepa H vacunal y cepas de campo)"
+    },
+    {
+      "esperado": "PCR en tiempo real para detección y cuantificación de Rotavirus A porcino",
+      "laboratorio": "PCR en tiempo real para detección y cuantificación de Rotavirus A porcino"
+    }
+  ]
+}
