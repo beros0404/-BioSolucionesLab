@@ -7,8 +7,8 @@ export async function updateSession(request: NextRequest) {
   })
 
   // Check if env vars are available
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.SUPABASE_ANON_KEY
 
   // If env vars are missing, return early
   if (!supabaseUrl || !supabaseAnonKey) {
